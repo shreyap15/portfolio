@@ -10,6 +10,7 @@ const positions = [
 export default function Strand({ strands, workId }: { strands: ResearchStrand[]; workId: string }) {
   const [current, setCurrent] = useState(0)
   const [selected, setSelected] = useState<number[]>([])
+  const [finished, setFinished] = useState<string[]>([])
   const [message, setMessage] = useState('Select the concepts in order to connect the method.')
   const strand = strands[current]
   const expanded = strand.nodes.length > positions.length
@@ -33,14 +34,17 @@ export default function Strand({ strands, workId }: { strands: ResearchStrand[];
       return
     }
     setSelected([...selected, index])
+    if (index === strand.nodes.length - 1)
+      setFinished((previous) => [...new Set([...previous, strand.id])])
     setMessage(
       index === strand.nodes.length - 1
         ? strand.result
-        : strand.connections?.[index - 1] ?? `Start with ${strand.nodes[index].toLowerCase()}.`,
+        : (strand.connections?.[index - 1] ?? `Start with ${strand.nodes[index].toLowerCase()}.`),
     )
   }
   function reset() {
     setSelected([])
+    setFinished((previous) => previous.filter((id) => id !== strand.id))
     setMessage('Select the concepts in order to connect the method.')
   }
   return (
@@ -50,13 +54,21 @@ export default function Strand({ strands, workId }: { strands: ResearchStrand[];
           {strands.map((item, i) => (
             <button
               key={item.id}
+              aria-label={item.title}
               aria-pressed={i === current}
+              className={finished.includes(item.id) ? 'finished' : ''}
               onClick={() => {
                 setCurrent(i)
-                reset()
+                setSelected(finished.includes(item.id) ? item.nodes.map((_, index) => index) : [])
+                setMessage(
+                  finished.includes(item.id)
+                    ? item.result
+                    : 'Select the concepts in order to connect the method.',
+                )
               }}
             >
               {item.title}
+              {finished.includes(item.id) && <span aria-hidden="true"> ✓</span>}
             </button>
           ))}
         </div>
@@ -90,6 +102,7 @@ export default function Strand({ strands, workId }: { strands: ResearchStrand[];
           className="button"
           onClick={() => {
             setSelected(strand.nodes.map((_, i) => i))
+            setFinished((previous) => [...new Set([...previous, strand.id])])
             setMessage(strand.result)
           }}
         >

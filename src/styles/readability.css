@@ -1,4 +1,4 @@
-﻿/* Readability and persistent interaction cues; existing layout and heading scale stay intact. */
+/* Readability and persistent interaction cues; existing layout and heading scale stay intact. */
 body {
   font-size: 16px;
 }
@@ -96,7 +96,7 @@ a:hover,
 }
 .button:not(:disabled):hover,
 .word-controls button:hover {
-  background: var(--green-pale);
+  background: var(--accent-soft);
   color: var(--ink);
 }
 .button:disabled {
@@ -152,10 +152,177 @@ a:hover,
   border-top: var(--border);
   padding-top: 20px;
 }
-.supporting-award .award-hex {
-  display: none;
-}
 .award-highlight {
   margin-top: 12px !important;
   color: var(--ink) !important;
+}
+
+/* Component states share the section accent, not a universal ring. */
+.text-link {
+  padding-block: 3px;
+}
+.external-arrow {
+  display: inline-block;
+  margin-left: 0.3em;
+  font: inherit;
+  color: inherit;
+  vertical-align: baseline;
+}
+.award-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  line-height: 1.6;
+}
+.award-link > .award-hex {
+  width: 19px;
+  height: 22px;
+  margin: 0;
+}
+.award-link > span:first-child {
+  font-size: inherit;
+}
+.mode-buttons button {
+  border-radius: 3px;
+}
+.mode-reveal {
+  background: transparent;
+  padding-block: 12px;
+}
+.detail-facts {
+  gap: 7px 14px;
+}
+#tata .detail-facts li:not(:last-child)::after {
+  content: ' →';
+  color: var(--accent);
+}
+.strand-tabs {
+  gap: 12px;
+  padding-block: 6px;
+}
+.strand-tabs button {
+  padding: 7px 5px;
+  border-radius: 3px;
+}
+.strand-tabs .finished:not([aria-pressed='true']) {
+  opacity: 0.72;
+  text-decoration-style: dotted;
+}
+.strand-node.connected {
+  border-color: var(--accent);
+  box-shadow: inset 0 -2px var(--accent);
+}
+.strand-board.complete polyline {
+  stroke: var(--accent-soft);
+}
+.strand-board.complete .strand-node {
+  box-shadow: none;
+  cursor: default;
+}
+.strand-board.complete .strand-node:hover {
+  background: var(--accent-soft);
+  box-shadow: none;
+}
+.strand-board.complete .strand-node:last-child,
+.strand-board.complete .strand-node:last-child:hover {
+  background: var(--strands-yellow);
+}
+.project-number { color: var(--accent); border-color: var(--projects-light-purple); }
+#experience .item-index { color: var(--wordle-green-text); }
+#research .strand-actions > span { color: var(--accent); }
+.solved-group {
+  border-left: 3px solid #0002;
+}
+.solved-group.yellow {
+  background: var(--connections-yellow);
+}
+.solved-group.green {
+  background: var(--connections-green);
+}
+.solved-group.blue {
+  background: var(--connections-blue);
+}
+.solved-group.purple {
+  background: var(--connections-purple);
+}
+.group-explanation {
+  font-size: 12px;
+  max-width: 570px;
+  margin: 7px 0;
+}
+.connection-tile.hinted {
+  border: 2px dashed var(--accent);
+}
+.connection-tile.hinted:not(.selected) {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+.tile-hint {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+.connection-tile.selected {
+  box-shadow: inset 0 -3px #0002;
+}
+.project-card {
+  padding-bottom: 40px;
+}
+.project-card .work-bullets {
+  line-height: 1.7;
+}
+.research-visual {
+  border-top: var(--border);
+  padding-top: 18px;
+}
+.research-row:nth-of-type(2) .research-visual {
+  padding-top: 18px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .solved-group,
+  .strand-board.complete {
+    animation: relationship-complete 420ms ease-out;
+  }
+  .external-arrow {
+    transition: transform var(--motion);
+  }
+  a:hover .external-arrow,
+  a:focus-visible .external-arrow {
+    transform: translateX(2px);
+  }
+  @keyframes relationship-complete {
+    from {
+      opacity: 0.65;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+@media (max-width: 600px) {
+  .word-controls button {
+    min-height: 40px;
+  }
+  .letter-modes .mode-buttons > button {
+    padding-block: 5px;
+  }
+  .strand-actions button {
+    min-height: 42px;
+  }
+  .research-visual {
+    padding-top: 18px;
+  }
+  .award-link > .award-hex {
+    width: 18px;
+    height: 21px;
+  }
+}
+.project-note {
+  display: flex;
+  gap: 9px;
+  align-items: center;
 }

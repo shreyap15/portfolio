@@ -1,4 +1,4 @@
-﻿import { test, expect } from '@playwright/test'
+import { test, expect } from '@playwright/test'
 import { boardReducer, initialState } from '../src/components/connections/state'
 import { connectionGroups, initialTiles } from '../src/data/connections'
 test.use({ hasTouch: true })
@@ -9,9 +9,13 @@ test('hints cycle unsolved themes; one-away clues and guided groups preserve man
   let state = initialState
   for (const group of connectionGroups) {
     state = boardReducer(state, { type: 'hint' })
-    expect(state.message).toContain(group.title)
+    expect(state.message).toContain(group.clue)
     expect(state.selected).toHaveLength(0)
     expect(state.solved).toHaveLength(0)
+    state = boardReducer(state, { type: 'hint' })
+    expect(state.hinted).toHaveLength(2)
+    state = boardReducer(state, { type: 'hint' })
+    expect(state.hinted).toHaveLength(1)
   }
   const first = initialTiles.filter((tile) => tile.groupId === connectionGroups[0].id)
   for (const tile of first.slice(0, 3)) state = boardReducer(state, { type: 'toggle', id: tile.id })

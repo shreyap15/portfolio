@@ -23,7 +23,11 @@ export const researchDetails: Record<
         id: 'infrastructure',
         title: 'Infrastructure inputs',
         nodes: ['BIM', 'GIS', 'INFRASTRUCTURE', 'DIGITAL TWIN'],
-        connections: ['BIM and GIS connect built-system information with its spatial setting.', 'These inputs place the rainfall analysis in the context of campus infrastructure.', 'Combining infrastructure and rainfall inputs makes sewer stress-testing possible.'],
+        connections: [
+          'BIM and GIS connect built-system information with its spatial setting.',
+          'These inputs place the rainfall analysis in the context of campus infrastructure.',
+          'Combining infrastructure and rainfall inputs makes sewer stress-testing possible.',
+        ],
         result:
           'Integrated BIM and GIS inputs with rainfall analysis to stress-test campus sewer infrastructure.',
       },
@@ -34,13 +38,20 @@ export const researchDetails: Record<
       {
         id: 'semantics',
         title: 'Semantic analysis',
-        nodes: ['1.73M DISSERTATIONS', 'MPNet', '768-D EMBEDDINGS', 'CENTROIDS', 'COSINE SIMILARITY', 'SEMANTIC CHANGE'],
+        nodes: [
+          '1.73M DISSERTATIONS',
+          'MPNet',
+          '768-D EMBEDDINGS',
+          'CENTROIDS',
+          'COSINE SIMILARITY',
+          'SEMANTIC CHANGE',
+        ],
         connections: [
           'Multilingual MPNet translates dissertation text into a representation that can be compared across records.',
           'Each embedding represents semantic information in 768 dimensions.',
           'Centroids summarize groups of embeddings so topic patterns can be compared over time.',
           'Cosine similarity compares the direction of centroids, rather than their magnitude.',
-          'Changes in similarity trace shifts in research alignment; they do not by themselves establish a cause.',
+          'Changes in similarity trace shifts in research alignment over time.',
         ],
         result:
           'Multilingual MPNet embeddings and 768-dimensional centroid cosine similarity tracked longitudinal shifts in dissertation topics.',

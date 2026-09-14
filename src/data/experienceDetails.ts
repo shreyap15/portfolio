@@ -6,12 +6,13 @@ export const experienceDetails: Record<string, Pick<Work, 'logo' | 'modes'>> = {
       {
         label: 'AGENT',
         detail:
-          'Made exact calculations and analysis reproducible across inconsistent manufacturing datasets.',
+          'The analysis agent connected Python calculations with heterogeneous operational inputs, making reproducibility across inconsistent datasets the central requirement.',
         facts: ['AI analysis agent', 'Python', 'Operational data'],
       },
       {
         label: 'GUARD',
-        detail: 'Six-layer defense-in-depth blocked 100% of 500+ adversarial test executions.',
+        detail:
+          'Six-layer defense-in-depth blocked 100% of 500+ adversarial test executions, including dataframe mutation, reflection, aliasing, magic-method, and dynamic-execution attacks.',
         facts: [
           'Intent classification',
           'Prompt constraints',
@@ -23,12 +24,14 @@ export const experienceDetails: Record<string, Pick<Work, 'logo' | 'modes'>> = {
       },
       {
         label: 'ROUTE',
-        detail: 'Improved DSPy query-routing accuracy from 58% to 87% on a 65-question benchmark.',
+        detail:
+          'DSPy routing determines which query path to use; the same 65-question benchmark measured the change from 58% to 87% accuracy.',
         facts: ['DSPy', '58% → 87%', '65 questions'],
       },
       {
         label: 'EVAL',
-        detail: 'Reached 92% BERTScore on tabular reasoning across 7k+ FETA-QA evaluation records.',
+        detail:
+          'Pytest and DeepEval supported evaluation workflows; BERTScore and ROUGE-L measured outputs against FETA-QA across 7k+ records, reaching 92% BERTScore.',
         facts: ['Pytest', 'DeepEval', 'BERTScore', 'ROUGE-L', 'FETA-QA'],
       },
       {
@@ -45,29 +48,31 @@ export const experienceDetails: Record<string, Pick<Work, 'logo' | 'modes'>> = {
       {
         label: 'RECOMMEND',
         detail:
-          'Built an auto-updating Neural Collaborative Filtering system for personalized recommendations.',
+          'Neural Collaborative Filtering combined order history, seasonality, and digital signals; recommendations updated as the customer inputs changed.',
         facts: ['Order history', 'Seasonality', 'Digital signals'],
       },
       {
         label: 'COLD START',
-        detail: 'Addressed customer cold-start when little purchase history was available.',
+        detail:
+          'Cold-start meant purchase history alone was insufficient; survey preferences supplied another input for personalization.',
         facts: ['Cold-start', 'Personalization'],
       },
       {
         label: 'SURVEY',
-        detail: 'Combined 2,500 survey responses with transaction and engagement data.',
+        detail:
+          'The 2,500 survey responses supplied stated preferences alongside observed transaction and engagement data.',
         facts: ['2,500 responses', 'Customer preferences'],
       },
       {
         label: 'NLP',
         detail:
-          'Analyzed unstructured customer feedback to support product decisions and customer discovery.',
+          'NLP made unstructured customer feedback usable alongside engagement analysis, connecting what customers said with how they interacted.',
         facts: ['Unstructured feedback', 'Customer analytics'],
       },
       {
         label: 'GROWTH',
         detail:
-          'Analytics contributed to a 15% increase in Yelp visibility and a 500% increase in average Reels views.',
+          'The growth measures capture different stages of discovery: Yelp search visibility rose 15%, while average Instagram Reels views rose 500%.',
         facts: ['Yelp search', 'Instagram Reels', 'Engagement analysis'],
       },
     ],
@@ -78,30 +83,31 @@ export const experienceDetails: Record<string, Pick<Work, 'logo' | 'modes'>> = {
       {
         label: 'OPERATIONS',
         detail:
-          'Compared revenue per employee before and after COVID to inform resource allocation.',
+          'Revenue per employee compares output relative to staffing; the pre/post-COVID comparison focused on changes in labor efficiency at a competitor’s U.S. operations.',
         facts: ['Operations', 'Labor efficiency', 'Pre/post COVID'],
       },
       {
         label: 'CPU',
         detail:
-          'Consolidated CPU specifications and architecture benchmarks from supercomputer deployments.',
+          'CPU specifications describe the hardware; architecture benchmarks provide performance context for comparing supercomputer deployments.',
         facts: ['CPU specifications', 'Architecture'],
       },
       {
         label: 'GPU',
         detail:
-          'Compared GPU specifications and hardware adoption across high-performance computing systems.',
+          'GPU specifications were paired with adoption data to distinguish hardware characteristics from how those systems were actually being deployed.',
         facts: ['GPU specifications', 'Hardware adoption'],
       },
       {
         label: 'HPC',
-        detail: 'Used supercomputer deployment data to compare competing hardware architectures.',
+        detail:
+          'Supercomputer deployment data connected the CPU/GPU specification comparison to hardware adoption in high-performance computing.',
         facts: ['Supercomputers', 'Deployment data'],
       },
       {
         label: 'BENCHMARK',
         detail:
-          'Benchmarked semiconductor competitors across operational performance and hardware positioning.',
+          'The benchmark combined two perspectives: revenue per employee for operational efficiency, and CPU/GPU deployment data for hardware positioning.',
         facts: ['Competitor benchmarking', 'Resource allocation'],
       },
     ],

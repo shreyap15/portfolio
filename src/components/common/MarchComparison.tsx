@@ -1,3 +1,4 @@
+import { ExternalLink } from './Content'
 import { useState } from 'react'
 import { marchMetrics } from '../../data/marchMetrics'
 export default function MarchComparison() {
@@ -39,10 +40,7 @@ export default function MarchComparison() {
       </div>
       <figcaption>
         {data.label} · saved holdout results for the three core models. Each pipeline is a separate
-        evaluation run.{' '}
-        <a href={data.source} target="_blank" rel="noopener noreferrer">
-          Source CSV ↗
-        </a>
+        evaluation run. <ExternalLink href={data.source}>Source CSV</ExternalLink>
       </figcaption>
     </figure>
   )

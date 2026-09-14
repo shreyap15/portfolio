@@ -38,7 +38,7 @@
 }
 .media-choices button[aria-pressed='true'] {
   color: var(--ink);
-  border-color: var(--green);
+  border-color: var(--accent);
 }
 .project-links {
   display: flex;
@@ -128,8 +128,8 @@
     box-shadow var(--motion);
 }
 .strand-node:hover {
-  box-shadow: 0 2px 0 #9ab7bd;
-  background: #e8f0ee;
+  box-shadow: 0 2px 0 var(--accent);
+  background: var(--accent-soft);
 }
 .strand-node:active {
   box-shadow: none;
@@ -153,7 +153,7 @@
   padding: 9px 0;
 }
 .coffee-switch button[aria-pressed='true'] {
-  border-color: var(--green);
+  border-color: var(--accent);
   font-weight: 650;
 }
 .country-key {
@@ -185,7 +185,7 @@
 .coffee-timeline li,
 .coffee-model-flow li {
   position: relative;
-  border-left: 2px solid #b8c5b0;
+  border-left: 2px solid var(--accent-soft);
   padding: 0 0 16px 18px;
   font-size: 12px;
 }
@@ -198,7 +198,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #749063;
+  background: var(--accent);
 }
 .coffee-timeline li:last-child,
 .coffee-model-flow li:last-child {
@@ -259,7 +259,7 @@
   max-width: 650px;
   margin: 18px 0 24px;
   padding: 18px 14px;
-  background: #f0f1e9;
+  background: color-mix(in srgb, var(--projects-light-purple) 45%, var(--paper));
   border-block: var(--border);
 }
 .comparison-heading {
@@ -290,7 +290,8 @@
   padding: 4px;
 }
 .comparison-controls button[aria-pressed='true'] {
-  border-color: var(--ink);
+  border-color: var(--projects-purple);
+  color: var(--projects-purple);
 }
 .model-bar {
   display: grid;
@@ -308,15 +309,15 @@
 }
 .bar-track {
   height: 12px;
-  background: #e2e5da;
+  background: color-mix(in srgb, var(--projects-purple) 12%, var(--projects-light-purple));
 }
 .bar-track > div {
   height: 100%;
-  background: #a5adb6;
+  background: color-mix(in srgb, var(--projects-purple) 55%, var(--projects-light-purple));
   transition: width 200ms ease-out;
 }
 .model-bar.best .bar-track > div {
-  background: #718d60;
+  background: var(--projects-purple);
 }
 .model-bar > strong {
   font: 11px var(--sans);
@@ -451,3 +452,8 @@
     transform: none;
   }
 }
+
+.education-school { display: flex; align-items: center; gap: 14px; margin: 18px 0 14px; }
+.education-school img { width: 56px; height: 56px; flex: 0 0 56px; object-fit: contain; }
+.education-main .education-school h3 { margin: 0; }
+#national-merit .award-hex { font-size: 21px; }

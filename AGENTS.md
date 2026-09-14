@@ -12,3 +12,6 @@
 - Centralize design tokens. Check 375, 430, 768, 1024, and 1440px layouts.
 - Run build, typecheck, lint, and meaningful interaction tests before finishing. Document source limitations honestly.
 - `docs/READABILITY_DEPLOYMENT_SPEC.md` supersedes earlier requirements for the quick-scan section, readability, Connections assistance, and deployment. Keep this revision scoped.
+- `docs/INTERACTION_POLISH_SPEC.md` is the current scoped polish request: section accents at source, scan/explore hierarchy, deeper reveals, and consistent award/link markers.
+- `docs/GAME_PALETTE_CORRECTIONS.md` overrides arbitrary section colors: use the referenced game palettes, SVG external arrows, awards-only hexagons, and corrected Coffee labels.
+- Latest user amendment: external-link arrows are inherited-font text arrows (?), not SVG or icon components; preserve the corrected game palettes.

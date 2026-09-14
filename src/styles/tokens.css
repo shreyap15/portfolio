@@ -29,3 +29,41 @@
   --ease: ease-out;
   /* Responsive boundaries: 600px (phone), 900px (tablet). Media queries use these fixed values. */
 }
+
+:root {
+  --crossword-active: #56774b;
+  --crossword-highlight: #dce6d4;
+  --wordle-green: #56774b;
+  --wordle-green-text: #3f5d35;
+  --wordle-green-soft: #dce6d4;
+  --wordle-yellow: #eee1a8;
+  --wordle-gray: #eeeee7;
+  --strands-blue: #426f86;
+  --strands-light-blue: #d2e7ee;
+  --strands-yellow: #edda83;
+  --projects-purple: #725786;
+  --projects-light-purple: #eee6f4;
+  --connections-yellow: #edda83;
+  --connections-green: #dce6d4;
+  --connections-blue: #c5dfeb;
+  --connections-purple: #d5c5e4;
+  --award-yellow: #edda83;
+  --accent: #52534c;
+  --accent-soft: #eeeee7;
+}
+.hero {
+  --accent: var(--crossword-active);
+  --accent-soft: var(--crossword-highlight);
+}
+#experience {
+  --accent: var(--wordle-green);
+  --accent-soft: var(--wordle-green-soft);
+}
+#research {
+  --accent: var(--strands-blue);
+  --accent-soft: var(--strands-light-blue);
+}
+#projects {
+  --accent: var(--projects-purple);
+  --accent-soft: var(--projects-light-purple);
+}

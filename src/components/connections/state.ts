@@ -33,7 +33,10 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
       return {
         ...state,
         hintIndex: state.hintIndex + 1,
-        hinted: action.type === 'guide' || level === 0 ? [] : tiles.slice(0, level === 1 ? 2 : 1).map(tile => tile.id),
+        hinted:
+          action.type === 'guide' || level === 0
+            ? []
+            : tiles.slice(0, level === 1 ? 2 : 1).map((tile) => tile.id),
         selected:
           action.type === 'guide'
             ? initialTiles.filter((tile) => tile.groupId === group.id).map((tile) => tile.id)
@@ -41,8 +44,10 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
         message:
           action.type === 'guide'
             ? `Try this group: ${group.title}. Submit when you're ready.`
-            : level === 0 ? `Hint: ${group.clue}`
-              : level === 1 ? `Hint: ${tiles[0].label} and ${tiles[1].label} belong together.`
+            : level === 0
+              ? `Hint: ${group.clue}`
+              : level === 1
+                ? `Hint: ${tiles[0].label} and ${tiles[1].label} belong together.`
                 : `Hint: ${tiles[0].label} belongs to ${group.title}.`,
       }
     }

@@ -6,7 +6,8 @@
     related: ['loom'],
     color: 'yellow',
     clue: 'An artist platform combines discovery with protection from automated scraping.',
-    explanation: 'CLIP supports discovery; bot detection and anti-scraping protect the platform that serves those recommendations.',
+    explanation:
+      'CLIP supports discovery; bot detection and anti-scraping protect the platform that serves those recommendations.',
   },
   {
     id: 'physical',
@@ -15,7 +16,8 @@
     related: ['wheelway', 'lunar-llamas'],
     color: 'green',
     clue: 'Two prototypes help people navigate or maintain physical spaces.',
-    explanation: 'WheelWay connects routing with obstacle sensing; Lunar Llamas connects sanitation with automated cleaning.',
+    explanation:
+      'WheelWay connects routing with obstacle sensing; Lunar Llamas connects sanitation with automated cleaning.',
   },
   {
     id: 'modeling',
@@ -24,7 +26,8 @@
     related: ['march-madness'],
     color: 'blue',
     clue: 'Two tournament pipelines use historical ratings and evaluate prediction quality.',
-    explanation: 'Elo is a predictive input; log loss evaluates the probabilities produced by the men’s and women’s pipelines.',
+    explanation:
+      'Elo is a predictive input; log loss evaluates the probabilities produced by the men’s and women’s pipelines.',
   },
   {
     id: 'recognition',
@@ -33,7 +36,8 @@
     related: ['grant-planner'],
     color: 'purple',
     clue: 'Compare the funding landscape with a university’s participation to find opportunities.',
-    explanation: 'Funding and participation reveal gaps; rankings and projections help prioritize where to investigate next.',
+    explanation:
+      'Funding and participation reveal gaps; rankings and projections help prioritize where to investigate next.',
   },
 ]
 export const initialTiles = [0, 5, 10, 15, 8, 1, 14, 7, 12, 9, 2, 4, 6, 13, 3, 11].map((index) => {

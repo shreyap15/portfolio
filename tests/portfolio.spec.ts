@@ -114,7 +114,7 @@ test('reveal, keyboard controls, relationship links, and reduced motion', async 
   await page.getByRole('button', { name: 'GUARD', exact: true }).click()
   await expect(page.locator('#tata .mode-detail')).toContainText('Six-layer defense-in-depth')
   await page.getByRole('button', { name: 'HPC', exact: true }).click()
-  await expect(page.locator('#amd .mode-detail')).toContainText('supercomputer deployment data')
+  await expect(page.locator('#amd .mode-detail')).toContainText('Supercomputer deployment data')
   await page.getByRole('button', { name: 'Reveal All', exact: true }).click()
   await expect(page.locator('.solved-group')).toHaveCount(4)
   await page.getByRole('button', { name: 'Try again', exact: true }).click()

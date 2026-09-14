@@ -70,8 +70,8 @@ h1 {
   font-weight: 550;
 }
 .crossword-cell.active {
-  background: var(--green-pale);
-  box-shadow: inset 0 -2px var(--green);
+  background: var(--accent-soft);
+  box-shadow: inset 0 -2px var(--accent);
 }
 .crossword-word {
   z-index: 1;
@@ -81,13 +81,12 @@ h1 {
   border-radius: 0;
 }
 .crossword-word:hover {
-  outline: 1px solid var(--green);
-  outline-offset: 0;
+  box-shadow: inset 0 -2px var(--accent);
 }
 .crossword-word:focus-visible {
   z-index: 3;
-  outline: 2px solid #436781;
-  outline-offset: 2px;
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
 }
 .crossword-caption {
   margin-top: 24px;
@@ -150,21 +149,21 @@ h1 {
   color: var(--ink);
 }
 .letter-modes .visited:not([aria-pressed='true']) .letter-row > span {
-  background: #eee1a8;
+  background: var(--wordle-yellow);
   border-color: #d2c38c;
   border-bottom-style: dashed;
 }
 .letter-modes button[aria-pressed='true'] .letter-row > span {
   transform: none;
   animation: word-flip 380ms ease-out both;
-  background: #56774b;
-  border-color: #56774b;
+  background: var(--accent);
+  border-color: var(--accent);
 }
 .mode-reveal {
   display: flex;
   gap: 12px;
-  background: #eff2e8;
-  border-left: 2px solid var(--green);
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
   margin-top: 18px;
   padding: 15px;
   min-height: 126px;
@@ -202,7 +201,7 @@ h1 {
   }
 }
 .research-row {
-  grid-template-columns: 35% minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 35%;
   gap: 48px;
   padding-block: 42px;
 }
@@ -258,7 +257,7 @@ h1 {
   pointer-events: none;
 }
 .strand-board polyline {
-  stroke: #9ac9db;
+  stroke: var(--accent);
   stroke-width: 15px;
   fill: none;
   stroke-linecap: round;
@@ -268,7 +267,7 @@ h1 {
   position: absolute;
   transform: translate(-50%, -50%);
   padding: 8px 7px;
-  min-height: 43px;
+  min-height: 48px;
   width: 44%;
   border: 1px solid #b9c9ca;
   border-radius: 20px;
@@ -285,12 +284,12 @@ h1 {
   margin-bottom: 3px;
 }
 .strand-node.connected {
-  background: #d2e7ee;
-  border-color: #6c99aa;
+  background: var(--accent-soft);
+  border-color: var(--accent);
 }
 .strand-board.complete .strand-node:last-child {
-  background: var(--yellow);
-  border-color: #bfae65;
+  background: var(--strands-yellow);
+  border-color: var(--accent);
 }
 .strand-actions {
   display: flex;
@@ -311,7 +310,7 @@ h1 {
 }
 .strand-result.complete {
   color: var(--ink);
-  border-left: 2px solid #8db8c8;
+  border-left: 2px solid var(--accent);
   padding-left: 12px;
 }
 .board-heading h3 {
@@ -330,7 +329,7 @@ h1 {
   background: transparent;
   max-width: 820px;
   border: 0;
-  padding: 18px 0;
+  padding: 32px 0 18px; border-top: var(--border);
 }
 .connection-tile {
   font-size: 13px;
@@ -471,8 +470,8 @@ h1 {
   margin-top: 12px;
 }
 .involvement li.related {
-  background: #edf1e4;
-  box-shadow: inset 3px 0 var(--green);
+  background: var(--accent-soft);
+  box-shadow: inset 3px 0 var(--accent);
   padding-left: 10px;
 }
 .award-detail {
@@ -538,7 +537,7 @@ h1 {
     font-size: 14px;
   }
   .research-row {
-    grid-template-columns: 38% minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 38%;
     gap: 24px;
   }
   .strand-node {

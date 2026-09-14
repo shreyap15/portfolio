@@ -2,7 +2,7 @@ import type { ResearchTrack, ResearchStrand } from '../types/content'
 export const coffeeTracks: ResearchTrack[] = [
   {
     id: 'econometrics',
-    title: 'Conflict / econometric analysis',
+    title: 'Econometric Analysis',
     bullets: [
       'Analyzed how conflict affected El Salvador’s coffee industry from 2009–2022 using Costa Rica as a comparison country, measuring changes in coffee quality, Arabica production, exports, and prices across pre-conflict, conflict, and post-conflict periods.',
       'Used Difference-in-Differences with fixed effects and pre-treatment parallel-trends testing to distinguish treatment effects from underlying country-level differences.',
@@ -19,7 +19,7 @@ export const coffeeTracks: ResearchTrack[] = [
   },
   {
     id: 'machine-learning',
-    title: 'Drought / machine-learning forecasting',
+    title: 'Machine-Learning Forecasting',
     bullets: [
       'Built Random Forest and Gradient Boosting models using 19 econometric variables, NDVI, and precipitation data to study how climatic conditions affect coffee production, quality, and market behavior.',
       'Trained models on historical data from 2009–2022 and generated forward-looking predictions through 2035, using feature-importance analysis to identify which climatic variables were most strongly associated with coffee yield, quality, and market trends.',
@@ -65,7 +65,7 @@ export const coffeeFindings = [
 export const coffeeStrands: ResearchStrand[] = [
   {
     id: 'conflict-econometrics',
-    title: 'Conflict & Econometrics',
+    title: 'Econometric Analysis',
     nodes: [
       'EL SALVADOR → TREATMENT',
       'COSTA RICA → COMPARISON',
@@ -86,7 +86,7 @@ export const coffeeStrands: ResearchStrand[] = [
   },
   {
     id: 'drought-ml',
-    title: 'Drought & ML Forecasting',
+    title: 'Machine-Learning Forecasting',
     nodes: [
       '2009–2022 HISTORICAL DATA',
       '19 ECONOMETRIC FACTORS',
@@ -103,12 +103,12 @@ export const coffeeStrands: ResearchStrand[] = [
     connections: [
       'The 2009–2022 observations provide the historical values for 19 econometric factors.',
       'NDVI adds a vegetation signal alongside the market and production variables.',
-      'Precipitation adds a separate climate signal; it is not interchangeable with vegetation conditions.',
+      'Precipitation adds a rainfall signal alongside vegetation conditions.',
       'Random Forest models nonlinear relationships between climatic and economic variables.',
       'Gradient Boosting provides a second model for the forecasting analysis.',
-      'Feature importance identifies influential inputs; it does not establish a causal effect.',
+      'Feature importance identifies which inputs are most influential in the fitted models.',
       'Cross-validation evaluates robustness, while feature importance helps interpret the fitted models.',
-      'Projections extend beyond the historical training period through 2035; they remain modeled outcomes.',
+      'The models extend the historical analysis with projections through 2035.',
     ],
   },
 ]

@@ -80,7 +80,7 @@ export default function Crossword({ active, selected, onSelect, onHover, work }:
             <span>Related work: </span>
             {related.map((id) => (
               <a key={id} href={`#${id}`}>
-                {work.find((item) => item.id === id)?.name} ↗
+                {work.find((item) => item.id === id)?.name} →
               </a>
             ))}
           </>

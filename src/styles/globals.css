@@ -32,8 +32,8 @@ a:hover {
 }
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid #436781;
-  outline-offset: 5px;
+  outline: 3px solid var(--accent);
+  outline-offset: 6px;
 }
 button:disabled {
   cursor: default;
@@ -111,7 +111,7 @@ footer {
   font-style: normal;
 }
 .monogram-dot {
-  color: var(--green);
+  color: var(--wordle-green);
 }
 .site-header nav {
   display: flex;
@@ -155,7 +155,7 @@ footer {
 .mini-squares i {
   width: 10px;
   height: 10px;
-  background: var(--green);
+  background: var(--accent);
 }
 .mini-squares i:nth-child(2) {
   background: var(--yellow);
@@ -170,7 +170,7 @@ h1 {
   margin: 28px 0;
 }
 .name-period {
-  color: var(--green);
+  color: var(--wordle-green);
 }
 .hero-academic {
   font-size: 16px;
@@ -234,7 +234,7 @@ h1 {
   font-weight: 400;
 }
 .crossword-cell.active {
-  background: var(--green-pale);
+  background: var(--accent-soft);
   border-color: var(--ink);
 }
 .crossword-caption {
@@ -259,7 +259,7 @@ h1 {
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 4px;
-  background: var(--green-pale);
+  background: var(--accent-soft);
 }
 .crossword-related {
   font-size: 10px;
@@ -308,13 +308,13 @@ h1 {
 }
 .work-item.related,
 .award-item.related {
-  box-shadow: inset 4px 0 var(--green);
-  background: #f0f2e9;
+  box-shadow: -4px 0 var(--accent);
+  background: var(--accent-soft);
 }
 .work-item:target,
 .award-item:target {
-  outline: 2px solid #719364;
-  outline-offset: 8px;
+  background: var(--accent-soft);
+  box-shadow: -3px 0 var(--accent);
 }
 .experience-row {
   display: grid;
@@ -346,7 +346,7 @@ h1 {
   line-height: 1.8;
 }
 .feature-stat {
-  border-left: 3px solid var(--green);
+  border-left: 3px solid var(--accent);
   padding-left: 15px;
   margin-top: 30px;
   max-width: 195px;
@@ -412,7 +412,7 @@ h1 {
 }
 .mode-buttons > button[aria-pressed='true'] {
   border-color: var(--ink);
-  background: var(--green-pale);
+  background: var(--accent-soft);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -439,8 +439,8 @@ h1 {
 }
 .letter-modes button[aria-pressed='true'] .letter-row > span {
   color: white;
-  background: var(--green);
-  border-color: var(--green);
+  background: var(--accent);
+  border-color: var(--accent);
   transform: translateY(-2px);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -569,9 +569,9 @@ h1 {
   border-color: var(--ink);
 }
 .connection-tile.selected {
-  background: #575c50;
-  color: white;
-  border-color: #575c50;
+  background: var(--accent-soft);
+  color: var(--ink);
+  border-color: var(--accent);
   transform: translateY(-2px);
 }
 .board-message {
@@ -632,7 +632,7 @@ h1 {
   background: var(--yellow);
 }
 .green {
-  background: var(--green-pale);
+  background: var(--accent-soft);
 }
 .blue {
   background: var(--blue);
@@ -794,7 +794,7 @@ h1 {
 .award-hex {
   width: 66px;
   height: 74px;
-  background: var(--yellow);
+  background: var(--award-yellow);
   clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0 50%);
   flex-shrink: 0;
   display: grid;
@@ -834,7 +834,7 @@ h1 {
   margin-top: 14px;
 }
 .contact h2 span {
-  color: var(--green);
+  color: var(--accent);
 }
 .contact .social-links {
   gap: 32px;

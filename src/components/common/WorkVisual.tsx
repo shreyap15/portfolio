@@ -47,7 +47,7 @@ export default function WorkVisual({ id }: { id: string }) {
               loading="lazy"
             />
             <span className="expand-mark" aria-hidden="true">
-              ↗
+              ⤢
             </span>
           </button>
           {visual.images.length > 1 && (

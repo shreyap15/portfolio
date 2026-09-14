@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import cmuLogo from './images/cmu_logo.png'
 import { domains } from './data/domains'
 import WorkVisual from './components/common/WorkVisual'
 import MarchComparison from './components/common/MarchComparison'
@@ -12,7 +13,7 @@ import { recognition } from './data/recognition'
 import { education } from './data/education'
 import { involvement } from './data/involvement'
 import type { DomainId } from './types/content'
-import { Tags, Bullets, SectionTitle, ExternalLink } from './components/common/Content'
+import { Tags, Bullets, SectionTitle, ExternalLink, AwardHex } from './components/common/Content'
 import Crossword from './components/crossword/Crossword'
 import ExperienceModes from './components/wordle/ExperienceModes'
 import Strand from './components/strands/Strand'
@@ -49,7 +50,9 @@ export default function App() {
           ))}
         </nav>
         <a className="header-external" href={profile.links[0].href} aria-label="Shreya on GitHub">
-          ↗
+          <span className="external-arrow" aria-hidden="true">
+            →
+          </span>
         </a>
       </header>
       <main id="main">
@@ -142,12 +145,6 @@ export default function App() {
               key={work.id}
               className={`research-row work-item ${work.tracks ? 'coffee-research' : ''} ${highlighted(work.id) ? 'related' : ''}`}
             >
-              <div className="research-visual">
-                {work.tracks && <CoffeeVisual />}
-                <span className="tiny-label">Strand 0{i + 1}</span>
-                <Strand strands={work.strands!} workId={work.id} />
-                {work.github && <ExternalLink href={work.github}>View research code</ExternalLink>}
-              </div>
               <div>
                 <p className="work-kicker">{work.subtitle}</p>
                 <h3>{work.name}</h3>
@@ -182,12 +179,17 @@ export default function App() {
                 )}
                 <WorkVisual id={work.id} />
               </div>
+              <div className="research-visual">
+                {work.tracks && <CoffeeVisual />}
+                <span className="tiny-label">Strand 0{i + 1}</span>
+                <Strand strands={work.strands!} workId={work.id} />
+                {work.github && <ExternalLink href={work.github}>View research code</ExternalLink>}
+              </div>
             </article>
           ))}
         </section>
         <section id="projects" className="section">
           <SectionTitle number="03" title="Projects" />
-          <Connections onHighlight={setRelated} />
           <div className="project-grid">
             {projects.map((work, i) => (
               <article
@@ -220,22 +222,37 @@ export default function App() {
                       onBlur={() => setRelated([])}
                       onClick={() => setPinned([work.id, id])}
                     >
-                      <span aria-hidden="true">✳</span> {award.context} · {award.title}{' '}
-                      <span aria-hidden="true">↗</span>
+                      <AwardHex />
+                      <span>
+                        {award.title} ·{' '}
+                        {id === 'ironviz'
+                          ? 'CMU IronViz'
+                          : id === 'march-competition'
+                            ? 'CMU March Madness ML'
+                            : award.context}
+                      </span>
                     </a>
                   )
                 })}
-                {work.note && <p className="project-note">{work.note}</p>}
+                {work.note && (
+                  <p className="project-note">
+                    <span>{work.note}</span>
+                  </p>
+                )}
               </article>
             ))}
           </div>
+          <Connections onHighlight={setRelated} />
         </section>
         <section id="education" className="section">
           <SectionTitle number="04" title="Education & Involvement" />
           <div className="education-grid">
             <div className="education-main">
               <span className="tiny-label">Education</span>
-              <h3>{education.school}</h3>
+              <div className="education-school">
+                <img src={cmuLogo} alt="Carnegie Mellon University seal" width="185" height="185" />
+                <h3>{education.school}</h3>
+              </div>
               <p>{education.degree}</p>
               <p className="education-minor">{education.minor}</p>
               <p className="education-standing">
@@ -246,7 +263,11 @@ export default function App() {
               <span className="tiny-label">Teaching</span>
               <h3 id="teaching-title">{education.role}</h3>
               <p className="date">{education.dates}</p>
-              <p className="teaching-course">{education.course}</p>
+              <p className="teaching-course">
+                <ExternalLink href="https://www.cs.cmu.edu/~15122/">
+                  15-122: {education.course}
+                </ExternalLink>
+              </p>
               <ul className="work-bullets">
                 {education.bullets.map((bullet) => (
                   <li key={bullet}>{bullet}</li>
@@ -276,9 +297,7 @@ export default function App() {
                 key={award.id}
                 className={`award-item ${award.related.length ? 'project-award' : 'supporting-award'} ${highlighted(award.id) ? 'related' : ''}`}
               >
-                <span className="award-hex" aria-hidden="true">
-                  {award.mark}
-                </span>
+                <AwardHex>{award.mark}</AwardHex>
                 <div>
                   <h3>{award.title}</h3>
                   <p>{award.context}</p>
@@ -300,7 +319,7 @@ export default function App() {
                       onBlur={() => setRelated([])}
                       onClick={() => setPinned([id, award.id])}
                     >
-                      {projects.find((item) => item.id === id)?.name} ↗
+                      {projects.find((item) => item.id === id)?.name} →
                     </a>
                   ))}
                 </div>
@@ -322,7 +341,10 @@ export default function App() {
             <div className="email-links">
               {profile.emails.map((email) => (
                 <a key={email} href={`mailto:${email}`}>
-                  {email} ↗
+                  {email}
+                  <span className="external-arrow" aria-hidden="true">
+                    →
+                  </span>
                 </a>
               ))}
             </div>

@@ -1,4 +1,4 @@
-﻿import { test, expect } from '@playwright/test'
+import { test, expect } from '@playwright/test'
 import { coffeeStrands } from '../src/data/coffee'
 
 for (const width of [375, 768, 1440]) {
@@ -18,7 +18,7 @@ for (const width of [375, 768, 1440]) {
     await expect(page.locator('#hacking4humanity')).toContainText('Pennsylvania Governor’s Residence · AI Policy Roundtable')
     for (const [award, project] of [['ironviz','grant-planner'],['march-competition','march-madness'],['hacking4humanity','loom']]) await expect(page.locator(`#${award} a`)).toHaveAttribute('href', `#${project}`)
     const widget = page.locator('#arabica .strand-widget')
-    await expect(widget.locator('.strand-tabs button')).toHaveText(['Conflict & Econometrics', 'Drought & ML Forecasting'])
+    await expect(widget.locator('.strand-tabs button')).toHaveText(['Econometric Analysis', 'Machine-Learning Forecasting'])
     for (const strand of coffeeStrands) {
       await widget.getByRole('button', { name: strand.title, exact: true }).click()
       const nodes = widget.locator('.strand-node')

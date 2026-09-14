@@ -40,7 +40,7 @@ export default function Connections({ onHighlight }: { onHighlight: (ids: string
                     onClick={() => onHighlight(group.related)}
                     onFocus={() => onHighlight(group.related)}
                   >
-                    {projects.find((project) => project.id === id)?.name} ↗
+                    {projects.find((project) => project.id === id)?.name} →
                   </a>
                 ))}
               </div>
@@ -53,6 +53,7 @@ export default function Connections({ onHighlight }: { onHighlight: (ids: string
               ref={index === 0 ? firstTile : undefined}
               className={`connection-tile ${state.selected.includes(tile.id) ? 'selected' : ''} ${state.hinted.includes(tile.id) ? 'hinted' : ''}`}
               key={tile.id}
+              aria-label={tile.label}
               aria-pressed={state.selected.includes(tile.id)}
               onClick={() => dispatch({ type: 'toggle', id: tile.id })}
             >
