@@ -34,7 +34,7 @@ test('coffee tracks, teaching, education and Loom facts remain visible', async (
   await coffee.getByRole('button',{name:'ECONOMETRICS',exact:true}).click()
   for(const date of ['2009–2012','2012–2015','2015–2018','2018–2022'])await expect(coffee.locator('.coffee-timeline')).toContainText(date)
   await expect(coffee.locator('.research-track').last()).toBeVisible()
-  expect(coffeeStrands).toHaveLength(5)
+  expect(coffeeStrands).toHaveLength(2)
   const education=page.locator('#education')
   for(const text of ['Minor in Robotics','15-122 Teaching Assistant','CMU School of Computer Science','August 2026 – Present','500+','20+','representation invariants','loop invariants','asymptotic-complexity'])await expect(education).toContainText(text)
   await expect(education.locator('.teaching .tags li')).toHaveCount(6)

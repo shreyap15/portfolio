@@ -3,11 +3,13 @@ export interface BoardState {
   selected: string[]
   solved: string[]
   message: string
+  hintIndex: number
 }
 export const initialState: BoardState = {
   selected: [],
   solved: [],
   message: 'Select four related tiles, then submit a group.',
+  hintIndex: 0,
 }
 export type BoardAction =
   | { type: 'toggle'; id: string }
@@ -15,8 +17,28 @@ export type BoardAction =
   | { type: 'clear' }
   | { type: 'reveal' }
   | { type: 'reset' }
+  | { type: 'hint' }
+  | { type: 'guide' }
 export function boardReducer(state: BoardState, action: BoardAction): BoardState {
   switch (action.type) {
+    case 'hint':
+    case 'guide': {
+      const unsolved = connectionGroups.filter((group) => !state.solved.includes(group.id))
+      if (!unsolved.length) return state
+      const group = unsolved[state.hintIndex % unsolved.length]
+      return {
+        ...state,
+        hintIndex: state.hintIndex + 1,
+        selected:
+          action.type === 'guide'
+            ? initialTiles.filter((tile) => tile.groupId === group.id).map((tile) => tile.id)
+            : state.selected,
+        message:
+          action.type === 'guide'
+            ? `Try this group: ${group.title}. Submit when you're ready.`
+            : `Hint: look for four tiles about ${group.title}.`,
+      }
+    }
     case 'toggle': {
       const tile = initialTiles.find((tile) => tile.id === action.id)
       if (!tile || state.solved.includes(tile.groupId)) return state
@@ -35,13 +57,22 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
             (id) => initialTiles.find((tile) => tile.id === id)?.groupId === group.id,
           ),
       )
-      if (!group)
+      if (!group) {
+        const oneAway = connectionGroups.some(
+          (candidate) =>
+            state.selected.filter(
+              (id) => initialTiles.find((tile) => tile.id === id)?.groupId === candidate.id,
+            ).length === 3,
+        )
         return {
           ...state,
-          message:
-            'These tiles span more than one group. Deselect a tile to try another combination.',
+          message: oneAway
+            ? 'One away! Three tiles belong together. Try swapping one.'
+            : 'These tiles span more than one group. Deselect a tile to try another combination.',
         }
+      }
       return {
+        ...state,
         selected: [],
         solved: [...state.solved, group.id],
         message:
@@ -52,6 +83,7 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
       return { ...state, selected: [], message: 'Selection cleared.' }
     case 'reveal':
       return {
+        ...state,
         selected: [],
         solved: connectionGroups.map((group) => group.id),
         message: 'All groups revealed.',

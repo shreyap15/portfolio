@@ -3,6 +3,7 @@ export const education = {
   school: 'Carnegie Mellon University',
   degree: 'B.S. Information Systems & Computer Science',
   minor: 'Minor in Robotics',
+  standing: 'GPA: 3.90 / 4.00 · Dean’s List every semester',
   role: '15-122 Teaching Assistant · CMU School of Computer Science',
   dates: 'August 2026 – Present',
   course: 'Principles of Imperative Computation',

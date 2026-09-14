@@ -54,16 +54,6 @@ h1 {
 .tags li {
   font-size: 10px;
 }
-.metric strong {
-  font-size: 37px;
-  font-weight: 450;
-}
-.metric > span {
-  font-size: 12px;
-}
-.metric > small {
-  font-size: 10px;
-}
 .crossword-wrap {
   max-width: 455px;
 }
@@ -528,9 +518,6 @@ h1 {
   .research-row {
     gap: 30px;
   }
-  .metric strong {
-    font-size: 31px;
-  }
 }
 @media (max-width: 900px) {
   .crossword {
@@ -605,15 +592,6 @@ h1 {
   }
   .crossword-related {
     min-height: 55px;
-  }
-  .metric strong {
-    font-size: 29px;
-  }
-  .metric > span {
-    font-size: 10px;
-  }
-  .metric > small {
-    font-size: 9px;
   }
   .section-heading h2 {
     font-size: 31px;

@@ -87,23 +87,6 @@ export default function App() {
             ]}
           />
         </section>
-        <section className="quick-scan" aria-labelledby="scan-title">
-          <h2 id="scan-title" className="tiny-label">
-            At a glance
-          </h2>
-          <div className="metric-grid">
-            {metrics.map((metric) => (
-              <a href={`#${metric.related}`} className="metric" key={metric.id}>
-                <strong>
-                  {metric.value}
-                  {metric.unit && <small> {metric.unit}</small>}
-                </strong>
-                <span>{metric.label}</span>
-                <small>{metric.source}</small>
-              </a>
-            ))}
-          </div>
-        </section>
         <section id="experience" className="section">
           <SectionTitle number="01" title="Experience" />
           {experiences.map((work, i) => (
@@ -116,7 +99,10 @@ export default function App() {
                 <div className="company-mark-row">
                   {work.logo && (
                     <div className={`company-logo logo-${work.id}`}>
-                      <img src={work.logo.src} alt={work.logo.alt} />
+                      <img
+                        src={`${import.meta.env.BASE_URL}${work.logo.src.replace(/^\//, '')}`}
+                        alt={work.logo.alt}
+                      />
                     </div>
                   )}
                   <span className="item-index">0{i + 1} /</span>
@@ -252,6 +238,9 @@ export default function App() {
               <h3>{education.school}</h3>
               <p>{education.degree}</p>
               <p className="education-minor">{education.minor}</p>
+              <p className="education-standing">
+                <strong>{education.standing}</strong>
+              </p>
             </div>
             <section className="teaching" aria-labelledby="teaching-title">
               <span className="tiny-label">Teaching</span>
@@ -285,7 +274,7 @@ export default function App() {
               <article
                 id={award.id}
                 key={award.id}
-                className={`award-item ${highlighted(award.id) ? 'related' : ''}`}
+                className={`award-item ${award.related.length ? 'project-award' : 'supporting-award'} ${highlighted(award.id) ? 'related' : ''}`}
               >
                 <span className="award-hex" aria-hidden="true">
                   {award.mark}
@@ -293,7 +282,13 @@ export default function App() {
                 <div>
                   <h3>{award.title}</h3>
                   <p>{award.context}</p>
+                  {award.highlight && (
+                    <p className="award-highlight">
+                      <strong>{award.highlight}</strong>
+                    </p>
+                  )}
                   {award.detail && <p className="award-detail">{award.detail}</p>}
+                  {award.supporting && <p>{award.supporting}</p>}
                   {award.related.map((id) => (
                     <a
                       className="text-link"

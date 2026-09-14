@@ -11,3 +11,4 @@
 - Use semantic HTML, button controls, visible keyboard focus, tap alternatives, reduced-motion support, and non-color state indicators.
 - Centralize design tokens. Check 375, 430, 768, 1024, and 1440px layouts.
 - Run build, typecheck, lint, and meaningful interaction tests before finishing. Document source limitations honestly.
+- `docs/READABILITY_DEPLOYMENT_SPEC.md` supersedes earlier requirements for the quick-scan section, readability, Connections assistance, and deployment. Keep this revision scoped.

@@ -140,7 +140,7 @@ test('full Connections play works by touch without activation', async ({ browser
   await page.getByRole('button', { name: 'Submit group' }).tap()
   await expect(page.locator('.solved-group')).toHaveCount(1)
   await expect(page.locator('.connection-tile')).toHaveCount(12)
-  await page.getByRole('button', { name: 'Reveal groups' }).tap()
+  await page.getByRole('button', { name: 'Reveal All' }).tap()
   await expect(page.locator('.solved-group')).toHaveCount(4)
   await context.close()
 })

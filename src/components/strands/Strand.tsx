@@ -12,6 +12,14 @@ export default function Strand({ strands, workId }: { strands: ResearchStrand[];
   const [selected, setSelected] = useState<number[]>([])
   const [message, setMessage] = useState('Select the concepts in order to connect the method.')
   const strand = strands[current]
+  const expanded = strand.nodes.length > positions.length
+  const boardHeight = expanded ? Math.ceil(strand.nodes.length / 2) * 92 : 220
+  const nodePositions = expanded
+    ? strand.nodes.map((_, index) => {
+        const row = Math.floor(index / 2)
+        return [((index % 2) + (row % 2)) % 2 === 0 ? 70 : 230, 46 + row * 92]
+      })
+    : positions
   const complete = selected.length === strand.nodes.length
   function choose(index: number) {
     if (complete) return
@@ -53,9 +61,12 @@ export default function Strand({ strands, workId }: { strands: ResearchStrand[];
           ))}
         </div>
       )}
-      <div className={`strand-board ${complete ? 'complete' : ''}`}>
-        <svg viewBox="0 0 300 220" preserveAspectRatio="none" aria-hidden="true">
-          <polyline points={selected.map((index) => positions[index].join(',')).join(' ')} />
+      <div
+        className={`strand-board ${complete ? 'complete' : ''}`}
+        style={expanded ? { height: boardHeight } : undefined}
+      >
+        <svg viewBox={`0 0 300 ${boardHeight}`} preserveAspectRatio="none" aria-hidden="true">
+          <polyline points={selected.map((index) => nodePositions[index].join(',')).join(' ')} />
         </svg>
         {strand.nodes.map((node, index) => (
           <button
@@ -63,7 +74,10 @@ export default function Strand({ strands, workId }: { strands: ResearchStrand[];
             className={`strand-node ${selected.includes(index) ? 'connected' : ''}`}
             aria-pressed={selected.includes(index)}
             onClick={() => choose(index)}
-            style={{ left: `${positions[index][0] / 3}%`, top: `${positions[index][1] / 2.2}%` }}
+            style={{
+              left: `${nodePositions[index][0] / 3}%`,
+              top: `${(nodePositions[index][1] / boardHeight) * 100}%`,
+            }}
           >
             <small>{selected.includes(index) ? '✓' : index + 1}</small>
             {node}

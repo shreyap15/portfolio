@@ -273,55 +273,6 @@ h1 {
   margin: 0 4px;
   text-decoration: underline;
 }
-.quick-scan {
-  border-top: var(--border);
-  border-bottom: 1px solid var(--ink);
-  padding: 20px 0 30px;
-}
-.quick-scan h2 {
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-.metric-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-}
-.metric {
-  display: flex;
-  flex-direction: column;
-  padding: 0 18px;
-  border-left: var(--border);
-  line-height: 1.45;
-}
-.metric:first-child {
-  padding-left: 0;
-  border-left: 0;
-}
-.metric:last-child {
-  padding-right: 0;
-}
-.metric strong {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 33px;
-  white-space: nowrap;
-  letter-spacing: -1px;
-  margin-bottom: 10px;
-}
-.metric strong small {
-  font: 14px var(--serif);
-  letter-spacing: 0;
-}
-.metric > span {
-  font-size: 11px;
-  max-width: 155px;
-  min-height: 32px;
-}
-.metric > small {
-  font-size: 9px;
-  color: var(--muted);
-  margin-top: 7px;
-}
 .section {
   padding-top: 76px;
 }
@@ -902,12 +853,6 @@ footer {
   }
 }
 @media (max-width: 1100px) {
-  .metric strong {
-    font-size: 28px;
-  }
-  .metric {
-    padding-inline: 12px;
-  }
   .experience-row,
   .research-row {
     gap: 35px;
@@ -956,20 +901,6 @@ footer {
   }
   .hero-academic p:last-child {
     font-size: 12px;
-  }
-  .metric-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px 0;
-  }
-  .metric:nth-child(4) {
-    border-left: 0;
-    padding-left: 0;
-  }
-  .metric strong {
-    font-size: 33px;
-  }
-  .metric > span {
-    min-height: 0;
   }
   .section {
     padding-top: 58px;
@@ -1088,28 +1019,6 @@ footer {
   }
   .crossword-related {
     min-height: 30px;
-  }
-  .metric-grid {
-    gap: 24px 0;
-  }
-  .metric {
-    padding: 0 10px;
-  }
-  .metric strong {
-    font-size: 27px;
-    letter-spacing: -0.8px;
-  }
-  .metric strong small {
-    font-size: 11px;
-  }
-  .metric > span {
-    font-size: 10px;
-  }
-  .metric > small {
-    font-size: 8px;
-  }
-  .quick-scan {
-    padding: 19px 0 25px;
   }
   .section {
     padding-top: 47px;

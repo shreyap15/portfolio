@@ -1,0 +1,161 @@
+﻿/* Readability and persistent interaction cues; existing layout and heading scale stay intact. */
+body {
+  font-size: 16px;
+}
+.work-bullets,
+.project-card .work-bullets {
+  font-size: 15px;
+}
+.role,
+.mode-detail,
+.research-attribution,
+.project-subtitle,
+.education-main p {
+  font-size: 14px;
+}
+.date,
+.detail-facts,
+.teaching-course,
+.involvement span,
+.strand-result {
+  font-size: 13px;
+}
+.involvement strong {
+  font-size: 14px;
+}
+.tags li,
+.work-kicker,
+.work-visual figcaption,
+.project-note {
+  font-size: 11px;
+}
+.project-card-top .text-link,
+.award-link,
+.research-visual > .text-link {
+  font-size: 12px;
+}
+.email-links,
+.social-links {
+  font-size: 14px;
+}
+.word-controls button,
+.strand-tabs button,
+.strand-reset,
+.button,
+.board-message,
+.solved-group > span,
+.solved-group a,
+.media-choices button,
+.coffee-switch button,
+.comparison-controls button {
+  font-size: 12px;
+}
+.letter-row > span {
+  font-size: 12px;
+}
+.strand-node {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.connection-tile {
+  font-size: 14px;
+  border-color: #a6a79c;
+  box-shadow: 0 2px 0 #c6c7bc;
+}
+.board-instructions {
+  font-size: 13px;
+  margin: -6px 0 16px;
+}
+.word-controls button {
+  border: 1px solid #b5b8ac;
+  border-radius: 3px;
+  background: var(--soft);
+}
+.letter-row > span {
+  border-color: #a6a79c;
+  box-shadow: 0 2px 0 #c6c7bc;
+}
+.strand-node {
+  border-color: #829fa3;
+}
+.award-link,
+.site-header nav a,
+.explore-link,
+footer a,
+.media-choices button,
+.coffee-switch button,
+.comparison-controls button {
+  text-decoration: underline;
+  text-decoration-color: #a6a69e;
+  text-underline-offset: 4px;
+}
+a:hover,
+.text-button:hover,
+.strand-tabs button:hover {
+  text-decoration-color: var(--ink);
+}
+.button:not(:disabled):hover,
+.word-controls button:hover {
+  background: var(--green-pale);
+  color: var(--ink);
+}
+.button:disabled {
+  box-shadow: none;
+}
+@media (max-width: 600px) {
+  .connection-tile {
+    font-size: 12px;
+    min-height: 80px;
+  }
+  .letter-row > span {
+    width: 22px;
+  }
+  .board-actions {
+    gap: 8px;
+  }
+  .email-links {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .connection-tile:active,
+  .button:not(:disabled):active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+}
+@media (max-width: 430px) {
+  .connections-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .connection-tile {
+    min-height: 64px;
+  }
+}
+
+/* Compact academic standing and a quieter second row of recognition. */
+.education-standing {
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.education-standing strong {
+  font-weight: 600;
+}
+.awards-grid .award-item {
+  align-items: flex-start;
+}
+.awards-grid .award-item p {
+  max-width: none;
+  font-size: 12px;
+}
+.awards-grid .supporting-award {
+  border-top: var(--border);
+  padding-top: 20px;
+}
+.supporting-award .award-hex {
+  display: none;
+}
+.award-highlight {
+  margin-top: 12px !important;
+  color: var(--ink) !important;
+}

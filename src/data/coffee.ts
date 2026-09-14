@@ -64,38 +64,34 @@ export const coffeeFindings = [
 ]
 export const coffeeStrands: ResearchStrand[] = [
   {
-    id: 'treatment',
-    title: 'Treatment',
-    nodes: ['EL SALVADOR', 'TREATMENT', 'DIFFERENCE-IN-DIFFERENCES', 'FIXED EFFECTS'],
+    id: 'conflict-econometrics',
+    title: 'Conflict & Econometrics',
+    nodes: [
+      'EL SALVADOR → TREATMENT',
+      'COSTA RICA → COMPARISON',
+      'PARALLEL TRENDS',
+      'DIFFERENCE-IN-DIFFERENCES',
+      'FIXED EFFECTS',
+      'QUALITY / PRODUCTION / EXPORTS / PRICE',
+    ],
     result:
-      'El Salvador is the treatment country in the conflict analysis; Difference-in-Differences with fixed effects separates treatment effects from underlying country-level differences.',
+      'El Salvador is the treatment country and Costa Rica the comparison. Pre-treatment parallel-trends analysis supports Difference-in-Differences with fixed effects across quality, production, exports, and price.',
   },
   {
-    id: 'control',
-    title: 'Comparison',
-    nodes: ['COSTA RICA', 'CONTROL', 'PARALLEL TRENDS'],
+    id: 'drought-ml',
+    title: 'Drought & ML Forecasting',
+    nodes: [
+      '2009–2022 HISTORICAL DATA',
+      '19 ECONOMETRIC FACTORS',
+      'NDVI',
+      'PRECIPITATION',
+      'RANDOM FOREST',
+      'GRADIENT BOOSTING',
+      'FEATURE IMPORTANCE',
+      'CROSS-VALIDATION',
+      '2035 PROJECTIONS',
+    ],
     result:
-      'Costa Rica supplies the comparison, with pre-treatment parallel-trends testing before the 2012–2015 conflict window.',
-  },
-  {
-    id: 'climate',
-    title: 'Climate',
-    nodes: ['NDVI', 'PRECIPITATION', 'CLIMATE'],
-    result:
-      'NDVI and precipitation capture climate conditions for the separate drought and machine-learning analysis.',
-  },
-  {
-    id: 'models',
-    title: 'Models',
-    nodes: ['19 FACTORS', 'RANDOM FOREST', 'GRADIENT BOOSTING', 'FORECASTING'],
-    result:
-      'Random Forest and Gradient Boosting use 19 econometric factors plus climate variables to model nonlinear relationships and generate forecasts.',
-  },
-  {
-    id: 'projections',
-    title: 'Projections',
-    nodes: ['2009–2022', 'TRAINING DATA', '2035', 'PROJECTIONS'],
-    result:
-      'Historical data from 2009–2022 supports projections through 2035; cross-validation evaluates model robustness.',
+      'Random Forest and Gradient Boosting combine 19 econometric factors with NDVI and precipitation from 2009–2022. Feature importance interprets the models, cross-validation evaluates robustness, and forecasts extend through 2035.',
   },
 ]

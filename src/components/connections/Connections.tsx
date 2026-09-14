@@ -21,6 +21,9 @@ export default function Connections({ onHighlight }: { onHighlight: (ids: string
           {complete ? 'Try again' : 'Try the board'}
         </button>
       </div>
+      <p className="board-instructions">
+        Find four groups of four related items. Need help? Try a hint.
+      </p>
       <div className="connections-board">
         {connectionGroups
           .filter((group) => state.solved.includes(group.id))
@@ -61,6 +64,12 @@ export default function Connections({ onHighlight }: { onHighlight: (ids: string
         {state.message}
       </p>
       <div className="board-actions">
+        <button className="button" disabled={complete} onClick={() => dispatch({ type: 'hint' })}>
+          Hint
+        </button>
+        <button className="button" disabled={complete} onClick={() => dispatch({ type: 'guide' })}>
+          Try a group
+        </button>
         <button
           className="button solid"
           disabled={state.selected.length !== 4}
@@ -77,12 +86,13 @@ export default function Connections({ onHighlight }: { onHighlight: (ids: string
         </button>
         <button
           className="button"
+          disabled={complete}
           onClick={() => {
             dispatch({ type: 'reveal' })
             onHighlight([])
           }}
         >
-          Reveal groups
+          Reveal All
         </button>
         <span className="selection-count">{state.selected.length} / 4 selected</span>
       </div>

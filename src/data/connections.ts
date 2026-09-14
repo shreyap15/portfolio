@@ -1,30 +1,30 @@
 export const connectionGroups = [
   {
     id: 'discovery',
-    title: 'Finding what is relevant',
-    terms: ['CLIP tags', 'Personalized feeds', 'Similarity maps', 'Funding opportunities'],
-    related: ['loom', 'grant-planner'],
+    title: 'Loom: discovery & recognition',
+    terms: ['CLIP tags', 'Personalized feeds', 'Hacking4Humanity', 'Top finisher'],
+    related: ['loom'],
     color: 'yellow',
   },
   {
     id: 'physical',
-    title: 'Working with physical systems',
+    title: 'WheelWay & Lunar Llamas: hardware',
     terms: ['Route grades', 'Ultrasonic sensing', 'UV-C sanitation', 'Cleaning cycles'],
     related: ['wheelway', 'lunar-llamas'],
     color: 'green',
   },
   {
     id: 'modeling',
-    title: 'Comparing predictions',
+    title: 'March Madness: prediction models',
     terms: ['Elo ratings', 'Logistic regression', 'Calibration', 'Log loss'],
     related: ['march-madness'],
     color: 'blue',
   },
   {
     id: 'recognition',
-    title: 'Work recognized in competition',
-    terms: ['IronViz', '2nd place', 'Hacking4Humanity', 'Top finisher'],
-    related: ['grant-planner', 'loom'],
+    title: 'GrantScope: funding & recognition',
+    terms: ['Similarity maps', 'Funding opportunities', 'IronViz', '2nd place'],
+    related: ['grant-planner'],
     color: 'purple',
   },
 ]

@@ -60,6 +60,8 @@ export interface ResearchTrack {
   skills: string[]
 }
 export interface Recognition {
+  highlight?: string
+  supporting?: string
   id: string
   mark: string
   title: string
