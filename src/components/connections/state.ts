@@ -4,12 +4,14 @@ export interface BoardState {
   solved: string[]
   message: string
   hintIndex: number
+  hinted: string[]
 }
 export const initialState: BoardState = {
   selected: [],
   solved: [],
   message: 'Select four related tiles, then submit a group.',
   hintIndex: 0,
+  hinted: [],
 }
 export type BoardAction =
   | { type: 'toggle'; id: string }
@@ -25,10 +27,13 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
     case 'guide': {
       const unsolved = connectionGroups.filter((group) => !state.solved.includes(group.id))
       if (!unsolved.length) return state
-      const group = unsolved[state.hintIndex % unsolved.length]
+      const group = unsolved[Math.floor(state.hintIndex / 3) % unsolved.length]
+      const level = state.hintIndex % 3
+      const tiles = initialTiles.filter((tile) => tile.groupId === group.id)
       return {
         ...state,
         hintIndex: state.hintIndex + 1,
+        hinted: action.type === 'guide' || level === 0 ? [] : tiles.slice(0, level === 1 ? 2 : 1).map(tile => tile.id),
         selected:
           action.type === 'guide'
             ? initialTiles.filter((tile) => tile.groupId === group.id).map((tile) => tile.id)
@@ -36,7 +41,9 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
         message:
           action.type === 'guide'
             ? `Try this group: ${group.title}. Submit when you're ready.`
-            : `Hint: look for four tiles about ${group.title}.`,
+            : level === 0 ? `Hint: ${group.clue}`
+              : level === 1 ? `Hint: ${tiles[0].label} and ${tiles[1].label} belong together.`
+                : `Hint: ${tiles[0].label} belongs to ${group.title}.`,
       }
     }
     case 'toggle': {
@@ -74,6 +81,8 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
       return {
         ...state,
         selected: [],
+        hintIndex: 0,
+        hinted: [],
         solved: [...state.solved, group.id],
         message:
           state.solved.length === 3 ? 'All four groups found.' : `Group found: ${group.title}.`,
@@ -85,6 +94,7 @@ export function boardReducer(state: BoardState, action: BoardAction): BoardState
       return {
         ...state,
         selected: [],
+        hinted: [],
         solved: connectionGroups.map((group) => group.id),
         message: 'All groups revealed.',
       }

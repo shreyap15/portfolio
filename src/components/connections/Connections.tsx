@@ -31,6 +31,7 @@ export default function Connections({ onHighlight }: { onHighlight: (ids: string
             <div className={`solved-group ${group.color}`} key={group.id}>
               <strong>✓ {group.title}</strong>
               <span>{group.terms.join(' · ')}</span>
+              <p className="group-explanation">{group.explanation}</p>
               <div>
                 {group.related.map((id) => (
                   <a
@@ -50,13 +51,14 @@ export default function Connections({ onHighlight }: { onHighlight: (ids: string
           .map((tile, index) => (
             <button
               ref={index === 0 ? firstTile : undefined}
-              className={`connection-tile ${state.selected.includes(tile.id) ? 'selected' : ''}`}
+              className={`connection-tile ${state.selected.includes(tile.id) ? 'selected' : ''} ${state.hinted.includes(tile.id) ? 'hinted' : ''}`}
               key={tile.id}
               aria-pressed={state.selected.includes(tile.id)}
               onClick={() => dispatch({ type: 'toggle', id: tile.id })}
             >
               {state.selected.includes(tile.id) && <span aria-hidden="true">✓ </span>}
               {tile.label}
+              {state.hinted.includes(tile.id) && <small className="tile-hint">Hint</small>}
             </button>
           ))}
       </div>

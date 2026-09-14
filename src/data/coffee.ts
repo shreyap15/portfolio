@@ -76,6 +76,13 @@ export const coffeeStrands: ResearchStrand[] = [
     ],
     result:
       'El Salvador is the treatment country and Costa Rica the comparison. Pre-treatment parallel-trends analysis supports Difference-in-Differences with fixed effects across quality, production, exports, and price.',
+    connections: [
+      'Costa Rica supplies the comparison for changes observed in El Salvador, the treatment country.',
+      'Pre-treatment trends check whether the two countries were moving similarly before the conflict window.',
+      'Difference-in-Differences compares changes across the two countries and periods, rather than just their levels.',
+      'Fixed effects account for underlying country-level differences in the comparison.',
+      'The same design examines distinct outcomes: quality, production, exports, and price.',
+    ],
   },
   {
     id: 'drought-ml',
@@ -93,5 +100,15 @@ export const coffeeStrands: ResearchStrand[] = [
     ],
     result:
       'Random Forest and Gradient Boosting combine 19 econometric factors with NDVI and precipitation from 2009–2022. Feature importance interprets the models, cross-validation evaluates robustness, and forecasts extend through 2035.',
+    connections: [
+      'The 2009–2022 observations provide the historical values for 19 econometric factors.',
+      'NDVI adds a vegetation signal alongside the market and production variables.',
+      'Precipitation adds a separate climate signal; it is not interchangeable with vegetation conditions.',
+      'Random Forest models nonlinear relationships between climatic and economic variables.',
+      'Gradient Boosting provides a second model for the forecasting analysis.',
+      'Feature importance identifies influential inputs; it does not establish a causal effect.',
+      'Cross-validation evaluates robustness, while feature importance helps interpret the fitted models.',
+      'Projections extend beyond the historical training period through 2035; they remain modeled outcomes.',
+    ],
   },
 ]

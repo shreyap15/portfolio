@@ -14,6 +14,7 @@ export interface ResearchStrand {
   title: string
   nodes: string[]
   result: string
+  connections?: string[]
 }
 export interface Visual {
   kind: 'image' | 'diagram'

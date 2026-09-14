@@ -36,7 +36,7 @@ export default function Strand({ strands, workId }: { strands: ResearchStrand[];
     setMessage(
       index === strand.nodes.length - 1
         ? strand.result
-        : `Connected ${strand.nodes[index].toLowerCase()}.`,
+        : strand.connections?.[index - 1] ?? `Start with ${strand.nodes[index].toLowerCase()}.`,
     )
   }
   function reset() {
@@ -73,6 +73,7 @@ export default function Strand({ strands, workId }: { strands: ResearchStrand[];
             key={`${strand.id}-${node}`}
             className={`strand-node ${selected.includes(index) ? 'connected' : ''}`}
             aria-pressed={selected.includes(index)}
+            aria-disabled={complete}
             onClick={() => choose(index)}
             style={{
               left: `${nodePositions[index][0] / 3}%`,
