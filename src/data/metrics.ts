@@ -1,0 +1,45 @@
+export const metrics = [
+  {
+    id: 'security',
+    value: '100%',
+    label: '500+ adversarial test executions blocked',
+    source: 'Tata Electronics',
+    related: 'tata',
+  },
+  {
+    id: 'routing',
+    value: '58 → 87%',
+    label: 'Query-routing accuracy',
+    source: 'Tata Electronics',
+    related: 'tata',
+  },
+  {
+    id: 'rainfall',
+    value: '25.4',
+    unit: 'years',
+    label: 'Hourly rainfall analyzed',
+    source: 'Tang Lab',
+    related: 'tang',
+  },
+  {
+    id: 'records',
+    value: '1.73M',
+    label: 'Dissertation records',
+    source: 'Heinz / Collis Research',
+    related: 'collis',
+  },
+  {
+    id: 'viz',
+    value: '2nd',
+    label: 'CMU IronViz Datathon',
+    source: 'GrantScope',
+    related: 'grant-planner',
+  },
+  {
+    id: 'marketing',
+    value: '1st',
+    label: 'FBLA Nationals',
+    source: 'Intro to Marketing Concepts',
+    related: 'fbla',
+  },
+]

@@ -1,0 +1,71 @@
+import type { Work } from '../types/content'
+export const projects: Work[] = [
+  {
+    id: 'loom',
+    name: 'Loom',
+    subtitle: 'An ethical art social platform',
+    kind: 'project',
+    domains: ['software', 'ai', 'product', 'systems'],
+    skills: ['React', 'Node / Express', 'MongoDB', 'FastAPI', 'CLIP'],
+    github: 'https://github.com/shreyap15/loom-anti-scraping',
+    liveDemo: 'https://loom-art-app.vercel.app/',
+    recognition: ['hacking4humanity'],
+    bullets: [
+      'Built a full-stack social platform for artists using React, Node/Express, MongoDB, and FastAPI, with CLIP-based zero-shot tagging and content recommendations used to generate personalized discovery feeds.',
+      'Added behavioral bot detection and anti-scraping safeguards, including ensemble detection logic and honeypot interactions, so recommendations and discovery could coexist with stronger protections against automated scraping.',
+    ],
+    note: 'Pennsylvania Governor’s Residence — AI Policy Roundtable',
+  },
+  {
+    id: 'wheelway',
+    name: 'WheelWay',
+    subtitle: 'Accessibility-first pedestrian navigation',
+    kind: 'project',
+    domains: ['software', 'systems', 'product'],
+    skills: ['React', 'Flask', 'Mapbox', 'Pydantic', 'Raspberry Pi'],
+    github: 'https://github.com/shreyap15/wheelway',
+    bullets: [
+      'Built a pedestrian routing system that enriches exact Mapbox walking-route geometry with optional elevation grades and destination wheelchair-entrance information, then scores routes using slope-derived accessibility costs.',
+      'Shared a single routing pipeline across the Flask API and agent interfaces, alongside Raspberry Pi obstacle sensing. Missing enrichment data is explicitly marked unavailable.',
+    ],
+  },
+  {
+    id: 'grant-planner',
+    name: 'GrantScope',
+    subtitle: 'Research funding & opportunity analysis',
+    kind: 'project',
+    domains: ['software', 'data', 'product', 'business'],
+    skills: ['Next.js', 'Python', 'pandas', 'Data Visualization'],
+    github: 'https://github.com/shreyap15/grant-planner',
+    recognition: ['ironviz'],
+    bullets: [
+      'Compared AAU research funding with CMU participation to identify research areas where funding is large or growing but CMU appears relatively under-targeted.',
+      'Built separate strategy and researcher workspaces with opportunity rankings, funding projections, and similarity maps to help prioritize fields and identify adjacent research opportunities.',
+    ],
+  },
+  {
+    id: 'march-madness',
+    name: 'March Madness',
+    subtitle: 'Men’s & women’s NCAA predictions',
+    kind: 'project',
+    domains: ['software', 'data', 'research'],
+    skills: ['Python', 'Elo', 'Logistic Regression', 'Random Forest', 'Isotonic Calibration'],
+    github: 'https://github.com/shreyap15/march-madness',
+    recognition: ['march-competition'],
+    bullets: [
+      'Built separate men’s and women’s historical tournament pipelines using Elo features from 1998 onward, with efficiency statistics and external ratings from 2010 onward.',
+      'Compared calibrated logistic regression, random forests, and stacking using log loss and temporal validation. Logistic regression led the saved women’s holdout results, while the ensemble led the men’s run.',
+    ],
+  },
+  {
+    id: 'lunar-llamas',
+    name: 'Lunar Llamas',
+    subtitle: 'A self-cleaning shower prototype',
+    kind: 'project',
+    domains: ['systems', 'product'],
+    skills: ['Prototyping', 'UV-C Sanitation', 'Sensors', 'Hydrophobic Coatings'],
+    bullets: [
+      'Co-developed a five-part automated self-cleaning shower prototype with Shalaka Enterprises for use in unhoused-service environments, combining UV-C sanitation, hydrophobic coatings, and sensor-triggered cleaning cycles.',
+    ],
+  },
+]

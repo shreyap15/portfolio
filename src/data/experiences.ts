@@ -1,0 +1,65 @@
+import { experienceDetails } from './experienceDetails'
+import type { Work } from '../types/content'
+export const experiences: Work[] = [
+  {
+    id: 'tata',
+    ...experienceDetails['tata'],
+    name: 'Tata Electronics',
+    subtitle: 'Software Engineering Intern · Industrial AI',
+    kind: 'experience',
+    location: 'Santa Clara, CA',
+    dates: 'May 2026 – Aug. 2026',
+    domains: ['systems', 'software', 'ai', 'data'],
+    skills: [
+      'Python',
+      'DSPy',
+      'LangChain',
+      'AST Validation',
+      'Pytest',
+      'DeepEval',
+      'AI Agents',
+      'Manufacturing Data',
+    ],
+    bullets: [
+      'Built and evaluated an AI analysis agent for heterogeneous manufacturing data, including inspection files, sensor logs, and Excel/CSV/Parquet exports, with an emphasis on making exact calculations and analysis reproducible across inconsistent operational datasets.',
+      'Designed a six-layer defense-in-depth architecture covering intent classification, prompt constraints, AST-based code validation, runtime isolation, post-execution verification, and recovery. The resulting system blocked 100% of 500+ adversarial test executions, including dataframe mutation, reflection, aliasing, magic-method, and dynamic-execution attacks.',
+      'Improved DSPy-based query routing from 58% to 87% accuracy on a 65-question benchmark and built evaluation workflows using Pytest, DeepEval, BERTScore, ROUGE-L, and FETA-QA. Across 7k+ evaluation records, the system reached 92% BERTScore on tabular reasoning.',
+    ],
+  },
+  {
+    id: 'cwl',
+    ...experienceDetails['cwl'],
+    name: 'Coffee & Water Lab',
+    subtitle: 'Data Analysis Intern',
+    kind: 'experience',
+    location: 'San Jose, CA',
+    dates: 'June 2023 – June 2025',
+    domains: ['data', 'ai', 'product', 'business'],
+    skills: [
+      'Recommendation Systems',
+      'Customer Analytics',
+      'NLP',
+      'Python',
+      'Personalization',
+      'Product Analytics',
+    ],
+    bullets: [
+      'Built an auto-updating Neural Collaborative Filtering recommendation system that combined order history, seasonality, digital signals, and 2,500 survey responses to address customer cold-start and personalize recommendations even when little purchase history was available.',
+      'Built NLP and customer-analysis workflows around unstructured feedback and engagement data, using the results to improve both product decisions and customer discovery. This work contributed to a 15% increase in Yelp search visibility and a 500% increase in average Instagram Reels views.',
+    ],
+  },
+  {
+    id: 'amd',
+    ...experienceDetails['amd'],
+    name: 'AMD',
+    subtitle: 'Data & Operations Research Intern',
+    kind: 'experience',
+    dates: 'Sept. 2024 – Dec. 2024',
+    domains: ['data', 'research', 'business'],
+    skills: ['Competitive Analysis', 'Operations Research', 'CPU / GPU', 'Hardware Benchmarking'],
+    bullets: [
+      'Compared revenue per employee across semiconductor companies before and after COVID, identifying changes in labor efficiency at a major competitor’s U.S. operations that could inform resource-allocation decisions.',
+      'Consolidated CPU/GPU specifications, architecture benchmarks, and supercomputer deployment data to compare competitive positioning and understand how different hardware architectures were being adopted across high-performance computing systems.',
+    ],
+  },
+]
