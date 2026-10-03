@@ -66,7 +66,7 @@ test('every experience uses the shared reveal and every strand can be connected'
     }
     await expect(page.locator(`#${work.id} .work-bullets`)).toBeVisible()
   }
-  for (const work of research) {
+  for (const work of research.filter((item) => item.strands)) {
     const widget = page.locator(`#${work.id} .strand-widget`)
     for (const strand of work.strands!) {
       if (work.strands!.length > 1)

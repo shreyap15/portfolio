@@ -48,32 +48,32 @@ export const experienceDetails: Record<string, Pick<Work, 'logo' | 'modes'>> = {
       {
         label: 'RECOMMEND',
         detail:
-          'Neural Collaborative Filtering combined order history, seasonality, and digital signals; recommendations updated as the customer inputs changed.',
-        facts: ['Order history', 'Seasonality', 'Digital signals'],
+          'Familiar orders provided a starting point for translating existing preferences to unfamiliar drinks, helping customers discover menu options beyond what descriptions alone could explain.',
+        facts: ['Neural Collaborative Filtering', 'Preference-based recommendations', 'Menu discovery'],
       },
       {
         label: 'COLD START',
         detail:
-          'Cold-start meant purchase history alone was insufficient; survey preferences supplied another input for personalization.',
-        facts: ['Cold-start', 'Personalization'],
+          'Without a customer login linking individuals to purchases, order histories were sparse. Survey preferences supplied customer-level signals for cold-start recommendations.',
+        facts: ['No linked customer login', 'Sparse purchase histories', 'Survey preferences'],
       },
       {
-        label: 'SURVEY',
+        label: 'SIGNALS',
         detail:
-          'The 2,500 survey responses supplied stated preferences alongside observed transaction and engagement data.',
-        facts: ['2,500 responses', 'Customer preferences'],
+          'The 2,500 survey responses, personally profiled menu characteristics, digital trends, and owner knowledge about seasonal demand supplied alternative signals when transaction data was initially unavailable.',
+        facts: ['Survey preferences', 'Seasonality', 'Menu characteristics', 'Digital trends', 'Domain knowledge'],
       },
       {
         label: 'NLP',
         detail:
-          'NLP made unstructured customer feedback usable alongside engagement analysis, connecting what customers said with how they interacted.',
-        facts: ['Unstructured feedback', 'Customer analytics'],
+          'NLP made unstructured customer feedback usable for identifying response patterns and informing customer discovery and digital strategy.',
+        facts: ['Unstructured feedback', 'Response patterns', 'Customer analytics'],
       },
       {
         label: 'GROWTH',
         detail:
-          'The growth measures capture different stages of discovery: Yelp search visibility rose 15%, while average Instagram Reels views rose 500%.',
-        facts: ['Yelp search', 'Instagram Reels', 'Engagement analysis'],
+          'Customer-feedback patterns and demographic engagement analysis informed digital strategy on Yelp and Instagram, supporting search visibility and Reels-view growth.',
+        facts: ['Yelp visibility +15%', 'Reels average views ~+500%', 'Demographic engagement'],
       },
     ],
   },

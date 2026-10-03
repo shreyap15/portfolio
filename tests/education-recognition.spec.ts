@@ -6,7 +6,7 @@ for (const width of [375, 768, 1440]) {
     await page.setViewportSize({ width, height: 900 })
     await page.goto('/')
     await page.evaluate(() => document.fonts.ready)
-    await expect(page.locator('.education-main')).toContainText('GPA: 3.90 / 4.00 · Dean’s List every semester')
+    await expect(page.locator('.education-main')).toContainText('GPA: 3.80 / 4.00 · Dean’s List w/ High Honors every semester')
     await expect(page.locator('.education-main')).toContainText('Minor in Robotics')
     await expect(page.locator('.teaching')).toContainText('15-122 Teaching Assistant')
     await expect(page.locator('.teaching .work-bullets li')).toHaveCount(2)

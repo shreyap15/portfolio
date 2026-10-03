@@ -3,6 +3,22 @@ import { researchDetails } from './researchDetails'
 import type { Work } from '../types/content'
 export const research: Work[] = [
   {
+    id: 'szafron',
+    name: 'Computational Imaging & Scoliosis Biomechanics',
+    subtitle: 'CMU Department of Biomechanics & Biomedical Engineering',
+    role: 'Research Assistant',
+    attribution: ['Prof. Jason Szafron'],
+    dates: 'Sep. 2026 – Present',
+    location: 'Pittsburgh, PA',
+    kind: 'research',
+    domains: ['research', 'data'],
+    skills: ['MRI', 'Image Segmentation', 'Biomechanics', 'Scoliosis', 'Computational Imaging'],
+    bullets: [
+      'Building an automated MRI processing pipeline to segment intervertebral discs and quantify loading asymmetries, turning imaging data into quantitative measurements relevant to spinal biomechanics and scoliosis.',
+      'Conducting robotic testing of porcine spines to evaluate mechanistic hypotheses for idiopathic scoliosis progression, complementing the computational imaging measurements with physical biomechanical testing.',
+    ],
+  },
+  {
     id: 'tang',
     ...researchDetails['tang'],
     name: 'Sewer System Digital Twin',

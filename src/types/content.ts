@@ -30,6 +30,7 @@ export interface Work {
   id: string
   name: string
   subtitle: string
+  role?: string
   kind: 'experience' | 'research' | 'project'
   domains: DomainId[]
   skills: string[]

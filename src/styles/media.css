@@ -457,3 +457,28 @@
 .education-school img { width: 56px; height: 56px; flex: 0 0 56px; object-fit: contain; }
 .education-main .education-school h3 { margin: 0; }
 #national-merit .award-hex { font-size: 21px; }
+.education-coursework { margin-top: 12px; line-height: 1.7; }
+
+/* Ongoing research without a supplied visual or established results. */
+.research-row.research-compact {
+  grid-template-columns: minmax(0, 1fr);
+  padding-block: 30px;
+}
+.research-compact > div {
+  max-width: 78ch;
+}
+.research-compact h3 {
+  font-size: clamp(24px, 3vw, 30px);
+}
+.research-compact .work-kicker {
+  font-size: 13px;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+.research-compact .research-attribution {
+  margin: 8px 0;
+}
+.research-date {
+  margin-bottom: 20px;
+}

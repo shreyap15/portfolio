@@ -8,5 +8,10 @@ export const involvement = [
   { id: 'sws', name: 'Smart Woman Securities', detail: 'Research Analyst · Crypto / Commodities' },
   { id: 'scottylabs', name: 'ScottyLabs', detail: 'Tech Product Strategy' },
   { id: 'is-sphere', name: 'IS Sphere', detail: 'Leadership Team' },
+  {
+    id: 'ucc',
+    name: 'Undergraduate Consulting Club — Associate',
+    detail: 'Giant Eagle · Data Analysis & Strategy',
+  },
   { id: 'rowing', name: 'CMU Rowing', detail: 'Novice Team' },
 ]

@@ -51,7 +51,7 @@ export const domains: {
     col: 6,
     direction: 'down',
     number: 5,
-    related: ['tang', 'collis', 'arabica'],
+    related: ['tang', 'collis', 'arabica', 'szafron'],
   },
   {
     id: 'finance',

@@ -143,16 +143,23 @@ export default function App() {
             <article
               id={work.id}
               key={work.id}
-              className={`research-row work-item ${work.tracks ? 'coffee-research' : ''} ${highlighted(work.id) ? 'related' : ''}`}
+              className={`research-row work-item ${work.tracks ? 'coffee-research' : ''} ${!work.strands ? 'research-compact' : ''} ${highlighted(work.id) ? 'related' : ''}`}
             >
               <div>
                 <p className="work-kicker">{work.subtitle}</p>
                 <h3>{work.name}</h3>
+                {work.role && <p className="role">{work.role}</p>}
                 {work.attribution && (
                   <p className="research-attribution">
                     {work.attribution.map((line) => (
                       <span key={line}>{line}</span>
                     ))}
+                  </p>
+                )}
+                {work.dates && (
+                  <p className="date research-date">
+                    {work.dates}
+                    {work.location && ` · ${work.location}`}
                   </p>
                 )}
                 {work.tracks ? (
@@ -179,12 +186,14 @@ export default function App() {
                 )}
                 <WorkVisual id={work.id} />
               </div>
-              <div className="research-visual">
-                {work.tracks && <CoffeeVisual />}
-                <span className="tiny-label">Strand 0{i + 1}</span>
-                <Strand strands={work.strands!} workId={work.id} />
-                {work.github && <ExternalLink href={work.github}>View research code</ExternalLink>}
-              </div>
+              {work.strands && (
+                <div className="research-visual">
+                  {work.tracks && <CoffeeVisual />}
+                  <span className="tiny-label">Strand 0{i + 1}</span>
+                  <Strand strands={work.strands} workId={work.id} />
+                  {work.github && <ExternalLink href={work.github}>View research code</ExternalLink>}
+                </div>
+              )}
             </article>
           ))}
         </section>
@@ -258,6 +267,7 @@ export default function App() {
               <p className="education-standing">
                 <strong>{education.standing}</strong>
               </p>
+              <p className="education-coursework"><strong>Relevant coursework:</strong> {education.coursework}</p>
             </div>
             <section className="teaching" aria-labelledby="teaching-title">
               <span className="tiny-label">Teaching</span>

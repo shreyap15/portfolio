@@ -3,9 +3,10 @@ export const education = {
   school: 'Carnegie Mellon University',
   degree: 'B.S. Information Systems & Computer Science',
   minor: 'Minor in Robotics',
-  standing: 'GPA: 3.90 / 4.00 · Dean’s List every semester',
+  standing: 'GPA: 3.80 / 4.00 · Dean’s List w/ High Honors every semester',
+  coursework: 'Computer Systems, Functional Programming, Database Design & Development, Human-Centered Software, Linear Algebra',
   role: '15-122 Teaching Assistant · CMU School of Computer Science',
-  dates: 'August 2026 – Present',
+  dates: 'Aug. 2026 – Present',
   course: 'Principles of Imperative Computation',
   bullets: [
     'TA for a course serving 500+ students, covering C programming, data structures, algorithms, and program correctness through contracts, representation invariants, and loop invariants.',
@@ -17,6 +18,5 @@ export const education = {
     'Algorithms',
     'Correctness',
     'Memory Management',
-    'Asymptotic Analysis',
   ],
 }
